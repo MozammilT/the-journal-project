@@ -1,0 +1,316 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto";
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  /* background: url(../assets/login-background.jpg) no-repeat; */
+  background-color: #000000;
+  background-image: url("https://www.transparenttextures.com/patterns/cubes.png");
+  /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+  /* background-size: cover; */
+  background-position: center;
+}
+
+.icon {
+  height: 18px;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px 100px;
+  background-color: red;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 99;
+  background: transparent;
+}
+
+.logo {
+  color: #37372d;
+  font-size: 2em;
+  user-select: none;
+}
+
+.navigation a {
+  position: relative;
+  font-size: 1.1em;
+  color: #914c4a;
+  text-decoration: none;
+  font-weight: 500;
+  margin-left: 40px;
+}
+
+.navigation a::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  left: 0;
+  bottom: -10px;
+  height: 3px;
+  background: #682f2d;
+  border-radius: 5px;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s;
+}
+
+.navigation a:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.navigation .btnLogin-popup {
+  width: 130px;
+  height: 50px;
+  background: transparent;
+  outline: none;
+  border: 2px solid #fff;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1.4em;
+  color: #fff;
+  font-weight: 500;
+  margin-left: 40px;
+  transition: 0.3s;
+}
+
+.btnLogin-popup:hover {
+  background-color: #fff;
+  color: #2d576b;
+}
+
+.wrapper {
+  position: relative;
+  width: 400px;
+  height: 440px;
+  background: transparent;
+  border: 2px solid rgba(225, 225, 225, 0.5);
+  border-radius: 20px;
+  backdrop-filter: blur(20px);
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: height 0.3s ease;
+  overflow: hidden;
+  transform: scale(0);
+  transition: transform 0.3s ease;
+}
+
+.wrapper.active-popup {
+  transform: scale(1);
+}
+
+.wrapper.active {
+  height: 520px;
+}
+
+.wrapper .close-icon {
+  position: absolute;
+  top: 10px;
+  right: 0;
+  width: 45px;
+  height: 45px;
+  font-size: 2em;
+  height: 20px;
+  z-index: 1;
+  cursor: pointer;
+}
+
+.wrapper .form-box {
+  width: 100%;
+  padding: 40px;
+}
+
+.wrapper .form-box.login {
+  transition: transform 0.3s ease;
+  transform: translateX(0);
+}
+
+.wrapper.active .form-box.login {
+  transform: translateX(-400px);
+}
+
+.wrapper .form-box.register {
+  position: absolute;
+  transform: translateX(400px);
+}
+
+.wrapper.active .form-box.register {
+  transition: transform 0.3s ease;
+  transform: translateX(0);
+}
+
+.form-box h2 {
+  font-size: 2em;
+  color: #914c4a;
+  text-align: center;
+  margin-top: 15px;
+}
+
+.input-box {
+  position: relative;
+  width: 100%;
+  height: 50px;
+  border-bottom: 2px solid #914c4a;
+  margin: 30px 0px;
+}
+
+.input-box label {
+  position: absolute;
+  top: 50%;
+  left: 5px;
+  transform: translateY(-50%);
+  font: 1em;
+  color: #914c4a;
+  font-weight: 500;
+  pointer-events: none;
+  transition: 0.3s;
+}
+
+.input-box input:focus ~ label,
+.input-box input:valid ~ label {
+  top: -5px;
+}
+
+.input-box input {
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-size: 1.1em;
+  color: #682f2d;
+  font-weight: 500;
+  padding: 0px 40px 0px 5px;
+}
+
+.input-box img {
+  position: absolute;
+  right: 8px;
+  top: 10px;
+}
+
+.remember-forget {
+  color: #7c3e3c;
+  font-size: 0.9em;
+  font-weight: 500;
+  margin: 10px 0px 15px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.remember-forget label input {
+  accent-color: #b9b140;
+  margin: 3px;
+}
+
+.remember-forget a {
+  color: #7c3e3c;
+  text-decoration: none;
+}
+
+.remember-forget a:hover {
+  text-decoration: underline;
+}
+
+.btn {
+  width: 100%;
+  height: 45px;
+  background-color: #914c4a;
+  border: none;
+  outline: none;
+  border-radius: 6px;
+  color: #fff;
+  cursor: pointer;
+  font-size: 1em;
+  font-weight: 500;
+  /* margin-bottom: 10px; */
+}
+
+.btn:hover {
+  background-color: #682f2d;
+}
+
+.btn.google {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  color: #914c4a;
+  /* border: 1px solid #ddd; */
+  margin-top: 10px;
+  gap: 10px;
+  padding: 10px 20px;
+  font-weight: 500;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+.google:hover {
+  background-color: #682f2d;
+  color: #fff;
+}
+
+.google .icon {
+  opacity: 0;
+}
+
+.google:hover .icon {
+  opacity: 1;
+}
+
+.google {
+  margin-top: 10px;
+}
+
+.login-register {
+  text-align: center;
+  font-size: 0.9em;
+  font-weight: 500;
+  color: #914c4a;
+  margin: 25px 0 10px;
+}
+
+.login-register p a {
+  accent-color: #003352;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.login-register p a:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.btn.google img.icon {
+  width: 20px;
+  height: 20px;
+}
+
+.error-message {
+  color: red;
+  /* margin-bottom: 10px; */
+  font-weight: 400;
+  text-align: left;
+  margin: 5px 0px;
+  font-size: small;
+}
+
+.toggle-password {
+  cursor: pointer;
+}

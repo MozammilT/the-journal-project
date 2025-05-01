@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login Page</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/styles/newLogin.css" />
+    <style></style>
+  </head>
+  <body>
+    <div class="login-container">
+      <div class="left-section">
+        <h1>WELCOME BACK</h1>
+        <p>Please enter your details.</p>
+
+        <form action="/login" method="post" class="form-wrapper">
+          <div class="input-group">
+            <label for="username">Username</label>
+            <input
+              name="username"
+              type="username"
+              id="username"
+              placeholder="Enter your username"
+              required
+            />
+          </div>
+
+          <div class="input-group">
+            <label for="password">Password</label>
+            <input
+              name="password"
+              type="password"
+              id="password"
+              placeholder="**********"
+              required
+            />
+            <% if (errorMessage) { %>
+            <p class="error-message"><%= errorMessage %></p>
+            <% } %>
+          </div>
+
+          <div class="options">
+            <label><input type="checkbox" /> Remember me</label>
+            <a href="#" class="forget">Forgot password</a>
+          </div>
+
+          <button type="submit" class="sign-in-button">Log in</button>
+        </form>
+
+        <a href="/auth/google" class="google-button">
+          <img
+            src="./assets/google.svg"
+            alt="google-logo"
+            width="20"
+            height="20"
+          />
+          Login with Google
+        </a>
+
+        <div class="signup-text">
+          Don't have an account? <a href="/register">Sign up for free!</a>
+        </div>
+      </div>
+
+      <div class="right-section"></div>
+    </div>
+    <script></script>
+  </body>
+</html>

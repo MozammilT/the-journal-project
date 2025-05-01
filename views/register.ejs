@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login Page</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/styles/newRegister.css" />
+    <style></style>
+  </head>
+  <body>
+    <div class="login-container">
+      <div class="left-section">
+        <h1>WELCOME to <span class="logo">ThoughtNest</span></h1>
+        <p>Start your Journey with us</p>
+
+        <form action="/register" method="post" class="form-wrapper">
+          <div class="input-group">
+            <label for="username">Username</label>
+            <input
+              name="username"
+              type="username"
+              id="username"
+              placeholder="Enter your username"
+              required
+            />
+          </div>
+
+          <div class="input-group">
+            <label for="email">Email</label>
+            <input
+              name="email"
+              type="email"
+              id="email"
+              placeholder="Enter your email"
+              required
+            />
+          </div>
+
+          <div class="input-group">
+            <label for="password">Password</label>
+            <input
+              name="password"
+              type="password"
+              id="password"
+              placeholder="**********"
+              required
+            />
+          </div>
+
+          <div class="options">
+            <label><input type="checkbox" /> Remember me</label>
+            <a href="#" class="forget">Forgot password</a>
+          </div>
+
+          <button class="sign-in-button">Sign in</button>
+        </form>
+        <!-- <button class="google-button">
+          <img
+            src="./assets/google.svg"
+            alt="Google logo"
+            width="20"
+            height="20"
+          />
+          Sign in with Google
+        </button> -->
+
+        <a href="/auth/google" class="google-button">
+          <img
+            src="./assets/google.svg"
+            alt="google-logo"
+            width="20"
+            height="20"
+          />
+          Sign up with Google
+        </a>
+
+        <div class="signup-text">
+          Already have an account? <a href="/login">Login here</a>
+        </div>
+      </div>
+
+      <div class="right-section"></div>
+    </div>
+  </body>
+</html>

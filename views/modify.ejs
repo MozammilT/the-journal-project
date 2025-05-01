@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Journal</title>
+    <link rel="stylesheet" href="/styles/index.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+  </head> 
+    <div class="container">
+
+      <h1 class="heading">
+        <%= heading %>
+      </h1>
+
+      <% if(locals.post) { %>
+
+      <form id="editForm" method="post" action="/posts/<%= post.id %>">
+        <input id="contentTitle" type="text" name="title" value="<%= post.title %>" required />
+        <textarea
+          id="contentInput"
+          name="content"
+          rows="10"
+        ><%= post.content %></textarea>
+        <!-- <input id="contentAuthor" type="text" name="author" value="<%= post.author %>" required /> -->
+        <input type="hidden" name="author" value="<%= post.author %>" />
+        <button class="create-new-btn">
+          <img src="/assets/share.svg" alt="" id="publishsvg" />
+          <%= submit %>
+        </button>
+      </form>
+
+      <% } else { %>
+
+      <!-- Edit form -->
+      <form id="newPostForm" method="post" action="/posts">
+        <input id="contentTitle" type="text" name="title" placeholder="Title" required />
+        <textarea
+          id="contentInput"
+          name="content"
+          placeholder="Write your thoughts here..."
+          required
+          rows="10"
+        ></textarea>
+        <!-- <input id="contentAuthor" type="text" name="author" placeholder="Author Name" required /> -->
+        <input type="hidden" name="author" value="<%= username %>" />
+        <button type="submit" class="create-new-btn">
+          <img src="/assets/share.svg" alt="" id="publishsvg" />
+          <%= submit %>
+        </button>
+      </form>
+      <% } %>
+    </div>
+  </body>
+</html>
