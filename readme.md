@@ -2,6 +2,8 @@
 
 A public blogging website where anyone can sign up, log in, and start sharing their thoughts. Users can create, edit, and delete their own blog posts, which are visible to everyone.
 
+ ⚠️ **Note**: This project is still in active development. Features may change and bugs may exist.
+
 ## ✨ Features
 
 - User registration and login (Local & Google OAuth)
