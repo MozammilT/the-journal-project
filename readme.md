@@ -38,7 +38,7 @@ npm install
 
 ### 3. Setup `.env` file
 
-Create a .env file in the root directory and add the following variables:
+Create a `.env` file in the root directory and add the following variables:
 
 ```env
 API_URL=http://localhost:1000
